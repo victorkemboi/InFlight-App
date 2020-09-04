@@ -1,14 +1,26 @@
 package com.mes.user_app.data.model
 
 import com.google.gson.annotations.SerializedName
+import com.mes.user_app.data.model.core.User
 
 data class UserM(
         @SerializedName("id")
-        val id: Int = 0,
+        override var id: String = "",
+
         @SerializedName("name")
-        val name: String = "",
+        override var name: String = "",
+
         @SerializedName("email")
-        val email: String = "",
+        override var email: String = "",
+
         @SerializedName("avatar")
-        val avatar: String = ""
-    )
+        override var avatar: String = "",
+
+
+        @SerializedName("createdLocally")
+        override var createdLocally: Boolean = false,
+
+        @SerializedName("syncStatus")
+        override var syncStatus: String = ""
+
+    ): User

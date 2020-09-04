@@ -5,36 +5,36 @@ import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 import androidx.room.TypeConverters
+import com.mes.user_app.data.model.core.User
 import com.mes.user_app.utils.DateTypeConverter
 import com.mes.user_app.utils.UtilityClass
 import java.util.*
 
 @Entity(tableName = "user")
 @TypeConverters(DateTypeConverter::class)
-data class User(
+data class UserDb(
         @ColumnInfo(name = "addedOn")
         var addedOn: Date = UtilityClass.getCurrentDateTime(),
 
         @ColumnInfo(name = "avatar")
-        var avatar : String = "",
+        override var avatar : String = "",
 
         @ColumnInfo(name = "name")
-        var name : String = "",
+        override var name : String = "",
 
         @ColumnInfo(name = "email")
-        var email: String = "",
+        override var email: String = "",
 
         @ColumnInfo(name = "id")
-        var id: String = "",
+        override var id: String = "",
 
         @ColumnInfo(name = "createdLocally")
-        var createdLocally: Boolean = false,
+        override var createdLocally: Boolean = false,
 
         @ColumnInfo(name = "syncStatus")
-        var syncStatus: String = "None",
+        override var syncStatus: String = "None",
 
-
-        ){
+        ): User{
         @PrimaryKey(autoGenerate = true)
         var userId: Int? = null
 }

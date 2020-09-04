@@ -1,6 +1,7 @@
 package com.mes.user_app.di
 
 import com.google.gson.Gson
+import com.google.gson.GsonBuilder
 import com.mes.user_app.data.api.ApiService
 import com.mes.user_app.utils.livedata_adapter.LiveDataCallAdapterFactory
 import dagger.Module
@@ -17,6 +18,13 @@ import javax.inject.Singleton
 @Module
 @InstallIn(ApplicationComponent::class)
 object NetworkModule {
+
+    @Provides
+    @Singleton
+    internal fun provideGson(): Gson {
+        val gsonBuilder = GsonBuilder()
+        return gsonBuilder.create()
+    }
 
     @Provides
     @Singleton
@@ -43,7 +51,7 @@ object NetworkModule {
     fun provideApiService(gson: Gson, okHttpClient: OkHttpClient): ApiService {
         return Retrofit.Builder()
             .addConverterFactory(GsonConverterFactory.create(gson))
-            .baseUrl("https://5e510330f2c0d300147c034c.mockapi.io/users")
+            .baseUrl("https://5e510330f2c0d300147c034c.mockapi.io/users/")
             .client(okHttpClient)
             .addCallAdapterFactory(LiveDataCallAdapterFactory())
             .build().create(ApiService::class.java)
