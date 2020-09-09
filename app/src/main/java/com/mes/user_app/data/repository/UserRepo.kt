@@ -1,19 +1,20 @@
 package com.mes.user_app.data.repository
 
-import androidx.lifecycle.LiveData
-import com.mes.user_app.data.model.core.User
-import com.mes.user_app.utils.livedata_adapter.ApiResponse
+import com.mes.user_app.data.db.model.User
+import com.mes.user_app.data.model.core.UserB
+import com.mes.user_app.utils.net_adapter.NetworkResponse
+import java.lang.Error
 
 interface UserRepo {
 
-    fun saveUser(user: User)
+    suspend  fun saveUser(user: User)
 
-    fun getUser(id:String): LiveData<User>
+    suspend fun getUser(id:String): User
 
-    fun checkUserExists(id: String): Boolean
+    suspend fun checkUserExists(id: String): Boolean
 
-    fun fetchUser(): LiveData<ApiResponse<List<User>>>
+    suspend fun fetchUser(): NetworkResponse<List<User>, Error>
 
-    fun getUsers(): LiveData<List<User>>
+    suspend fun getUsers(): List<UserB>
 
 }

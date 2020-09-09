@@ -1,7 +1,7 @@
 package com.mes.user_app.data.model
 
 import com.google.gson.annotations.SerializedName
-import com.mes.user_app.data.model.core.User
+import com.mes.user_app.data.model.core.UserB
 
 data class UserM(
         @SerializedName("id")
@@ -23,4 +23,4 @@ data class UserM(
         @SerializedName("syncStatus")
         override var syncStatus: String = ""
 
-    ): User
+    ): UserB

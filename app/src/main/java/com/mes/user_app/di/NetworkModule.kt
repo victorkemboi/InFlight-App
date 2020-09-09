@@ -5,6 +5,7 @@ import com.google.gson.GsonBuilder
 import com.mes.user_app.data.api.ApiService
 import com.mes.user_app.utils.SharedPrefs
 import com.mes.user_app.utils.livedata_adapter.LiveDataCallAdapterFactory
+import com.mes.user_app.utils.net_adapter.NetworkResponseAdapterFactory
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -54,7 +55,7 @@ object NetworkModule {
             .addConverterFactory(GsonConverterFactory.create(gson))
             .baseUrl("https://5e510330f2c0d300147c034c.mockapi.io/")
             .client(okHttpClient)
-            .addCallAdapterFactory(LiveDataCallAdapterFactory())
+            .addCallAdapterFactory(NetworkResponseAdapterFactory())
             .build().create(ApiService::class.java)
     }
 }

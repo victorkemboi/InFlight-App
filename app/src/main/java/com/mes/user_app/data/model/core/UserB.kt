@@ -1,6 +1,6 @@
 package com.mes.user_app.data.model.core
 
-interface  User {
+interface  UserB {
     var id: String
     var name: String
     var email: String

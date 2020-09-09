@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">User App</string>
+    <string name="refresh_to_view">Refresh to view Items!</string>
 </resources>
