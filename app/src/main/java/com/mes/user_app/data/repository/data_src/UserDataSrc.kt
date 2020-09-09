@@ -29,7 +29,7 @@ class UserDataSrc(
        }
     }
 
-    override fun fetchUser(id: String): LiveData<ApiResponse<List<User>>> {
+    override fun fetchUser(): LiveData<ApiResponse<List<User>>> {
         return userApiService.getUsers() as LiveData<ApiResponse<List<User>>>
     }
 

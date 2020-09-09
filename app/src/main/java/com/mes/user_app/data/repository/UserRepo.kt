@@ -12,7 +12,7 @@ interface UserRepo {
 
     fun checkUserExists(id: String): Boolean
 
-    fun fetchUser(id:String): LiveData<ApiResponse<List<User>>>
+    fun fetchUser(): LiveData<ApiResponse<List<User>>>
 
     fun getUsers(): LiveData<List<User>>
 

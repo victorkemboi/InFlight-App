@@ -3,6 +3,7 @@ package com.mes.user_app.di
 import com.google.gson.Gson
 import com.google.gson.GsonBuilder
 import com.mes.user_app.data.api.ApiService
+import com.mes.user_app.utils.SharedPrefs
 import com.mes.user_app.utils.livedata_adapter.LiveDataCallAdapterFactory
 import dagger.Module
 import dagger.Provides
@@ -28,12 +29,12 @@ object NetworkModule {
 
     @Provides
     @Singleton
-    fun provideOkHttpClient(): OkHttpClient {
+    fun provideOkHttpClient(sharedPrefs: SharedPrefs): OkHttpClient {
         val client = OkHttpClient.Builder()
 
         client.addInterceptor { chain ->
             val request = chain.request().newBuilder()
-                .addHeader("Authorization",String.format("Bearer %s")).build()
+                .addHeader("Authorization",String.format("Bearer %s", sharedPrefs.token)).build()
             chain.proceed(request)
 
         }
@@ -51,7 +52,7 @@ object NetworkModule {
     fun provideApiService(gson: Gson, okHttpClient: OkHttpClient): ApiService {
         return Retrofit.Builder()
             .addConverterFactory(GsonConverterFactory.create(gson))
-            .baseUrl("https://5e510330f2c0d300147c034c.mockapi.io/users/")
+            .baseUrl("https://5e510330f2c0d300147c034c.mockapi.io/")
             .client(okHttpClient)
             .addCallAdapterFactory(LiveDataCallAdapterFactory())
             .build().create(ApiService::class.java)
