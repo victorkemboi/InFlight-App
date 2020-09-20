@@ -34,8 +34,8 @@ class MainActivity : AppCompatActivity(),   SwipeRefreshLayout.OnRefreshListener
     }
 
     private fun setupUI() {
-        users_swipe_refresh.setOnRefreshListener(this)
-        users_swipe_refresh.setColorSchemeColors(
+        airlines_swipe_refresh.setOnRefreshListener(this)
+        airlines_swipe_refresh.setColorSchemeColors(
             ContextCompat.getColor( this,android.R.color.holo_green_dark),
             ContextCompat.getColor(this,android.R.color.holo_red_dark)  ,
             ContextCompat.getColor(this, android.R.color.holo_blue_dark)   ,
@@ -53,7 +53,7 @@ class MainActivity : AppCompatActivity(),   SwipeRefreshLayout.OnRefreshListener
     }
 
     private fun setupObserver() {
-        users_swipe_refresh.isRefreshing = true
+        airlines_swipe_refresh.isRefreshing = true
         if (adapter.itemCount > 0){
             adapter.clear()
         }
@@ -72,7 +72,7 @@ class MainActivity : AppCompatActivity(),   SwipeRefreshLayout.OnRefreshListener
                     users_preview.visibility = View.GONE
                 }
             }
-            users_swipe_refresh.isRefreshing = false
+            airlines_swipe_refresh.isRefreshing = false
         }
         })
 

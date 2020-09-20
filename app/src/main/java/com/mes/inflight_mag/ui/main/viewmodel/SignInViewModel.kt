@@ -65,7 +65,6 @@ class SignInViewModel @ViewModelInject constructor (
                             customer.postValue(null)
                             signInSuccess.postValue(false)
                             loading.postValue(false)
-                            Log.d("Network Error: ",response.toString())
                             message.postValue("Sign in failed! Check your credentials.")
                         }
                     }

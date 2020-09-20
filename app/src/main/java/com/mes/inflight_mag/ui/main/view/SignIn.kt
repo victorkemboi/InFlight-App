@@ -78,7 +78,7 @@ class SignIn : AppCompatActivity() {
 
                     startActivity(
                         Intent(
-                            this@SignIn, MainActivity::class.java
+                            this@SignIn, Home::class.java
                         )
                     )
                     finish()

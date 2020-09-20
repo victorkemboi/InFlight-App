@@ -1,11 +1,19 @@
 package com.mes.inflight_mag.data.db.model
 
+import android.os.Parcelable
 import androidx.room.ColumnInfo
+import androidx.room.Entity
 import androidx.room.PrimaryKey
+import androidx.room.TypeConverters
 import com.google.gson.annotations.SerializedName
+import com.mes.inflight_mag.utils.DateTypeConverter
+import kotlinx.android.parcel.Parcelize
 import java.util.*
 
-class Airline (
+@Parcelize
+@Entity(tableName = "airline")
+@TypeConverters(DateTypeConverter::class)
+data class Airline (
 
     @SerializedName("airline_id")
     @ColumnInfo(name = "airline_id")
@@ -39,7 +47,11 @@ class Airline (
 
     @ColumnInfo(name = "syncedOn")
     var syncedOn: Date? = null,
-)
+
+    @SerializedName("mag_count")
+    var magCount: Int = 3,
+
+): Parcelable
 {
     @PrimaryKey(autoGenerate = true)
     var id: Int? = null

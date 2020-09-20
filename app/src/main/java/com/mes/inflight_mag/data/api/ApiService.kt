@@ -1,9 +1,6 @@
 package com.mes.inflight_mag.data.api
 
-import com.mes.inflight_mag.data.db.model.Customer
-import com.mes.inflight_mag.data.db.model.Login
-import com.mes.inflight_mag.data.db.model.Registration
-import com.mes.inflight_mag.data.db.model.User
+import com.mes.inflight_mag.data.db.model.*
 import com.mes.inflight_mag.utils.net_adapter.NetworkResponse
 import retrofit2.http.Body
 import retrofit2.http.GET
@@ -18,6 +15,15 @@ interface ApiService {
 
     @POST("login")
     suspend fun login(@Body login: Login): NetworkResponse<Customer, Error>
+
+    @GET("airlines")
+    suspend fun getAirlines(): NetworkResponse<List<Airline>, Error>
+
+    @POST("magazines")
+    suspend fun getMagazines(@Body request: MagazineRequest): NetworkResponse<List<Magazine>, Error>
+
+    @GET("issues")
+    suspend fun getIssues(): NetworkResponse<List<Issue>, Error>
 
 
 }

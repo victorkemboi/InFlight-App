@@ -12,7 +12,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ui.main.view.SignUp"></activity>
+        <activity android:name=".ui.main.view.Magazines"></activity>
+        <activity android:name=".ui.main.view.Home" />
+        <activity android:name=".ui.main.view.SignUp" />
         <activity android:name=".ui.main.view.SignIn" />
         <activity
             android:name=".ui.main.view.SplashActivity"

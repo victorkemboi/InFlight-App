@@ -1,11 +1,16 @@
 package com.mes.inflight_mag.data.db.model
 
 import androidx.room.ColumnInfo
+import androidx.room.Entity
 import androidx.room.PrimaryKey
+import androidx.room.TypeConverters
 import com.google.gson.annotations.SerializedName
+import com.mes.inflight_mag.utils.DateTypeConverter
 import com.mes.inflight_mag.utils.UtilityClass
 import java.util.*
 
+@Entity(tableName = "customer")
+@TypeConverters(DateTypeConverter::class)
 data class Customer(
     @SerializedName("user_id")
     @ColumnInfo(name = "user_id")

@@ -21,7 +21,7 @@ class SplashActivity : AppCompatActivity() {
 
     private fun startMain() = if(settings.user != ""){
         startActivity(Intent(
-            this@SplashActivity, MainActivity::class.java)
+            this@SplashActivity, Home::class.java)
         )
         finish()
     }else{
