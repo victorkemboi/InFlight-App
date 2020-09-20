@@ -2,10 +2,13 @@ package com.mes.inflight_mag.data.repository.data_src
 
 import com.mes.inflight_mag.data.api.ApiService
 import com.mes.inflight_mag.data.db.dao.UserDao
+import com.mes.inflight_mag.data.db.model.Customer
+import com.mes.inflight_mag.data.db.model.Login
+import com.mes.inflight_mag.data.db.model.Registration
 import com.mes.inflight_mag.data.db.model.User
 import com.mes.inflight_mag.data.repository.UserRepo
 import com.mes.inflight_mag.utils.net_adapter.NetworkResponse
-import java.lang.Error
+import kotlin.Error
 
 class UserDataSrc(
     private val userApiService: ApiService,
@@ -32,6 +35,14 @@ class UserDataSrc(
 
     override suspend fun getUsers(): List<User> {
         return userDao.getUsers()
+    }
+
+    override suspend fun signIn(login: Login): NetworkResponse<Customer, Error> {
+        return userApiService.login(login)
+    }
+
+    override suspend fun register(registration: Registration): NetworkResponse<Customer, Error> {
+        return userApiService.register(registration)
     }
 
 }

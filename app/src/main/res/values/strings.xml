@@ -1,4 +1,16 @@
 <resources>
     <string name="app_name">Inflight Mag</string>
     <string name="refresh_to_view">Refresh to view Items!</string>
+    <string name="hint_user">Username or Email!</string>
+    <string name="hint_username">Username</string>
+    <string name="hint_email">Email</string>
+    <string name="hint_mobile">Phone Number</string>
+    <string name="hint_password">Password</string>
+    <string name="sign_in_btn">Sign In</string>
+    <string name="sign_up_btn">Sign Up</string>
+    <string name="sign_up_option_1">Don\'t have an account?</string>
+    <string name="sign_up_option_2">Register now.</string>
+    <string name="sign_in_option_1">Already have an account?</string>
+    <string name="sign_in_option_2">Sign In.</string>
+    <string name="name_tag">InFlight Mag | 2020</string>
 </resources>
