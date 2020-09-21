@@ -114,10 +114,11 @@ class Issues : AppCompatActivity() ,   SwipeRefreshLayout.OnRefreshListener  {
         adapter.onItemClick = {
                 issue ->
             val newIntent = Intent(
-                this, MainActivity::class.java
+                this, IssueDetail::class.java
             )
 
             newIntent.putExtra("issue", issue)
+            newIntent.putExtra("magazine", issueVM.magazine)
             startActivity(newIntent)
         }
     }

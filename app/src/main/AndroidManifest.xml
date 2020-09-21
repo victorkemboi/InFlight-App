@@ -12,7 +12,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ui.main.view.Issues"></activity>
+        <activity android:name=".ui.main.view.IssueDetail"></activity>
+        <activity android:name=".ui.main.view.Issues" />
         <activity android:name=".ui.main.view.Magazines" />
         <activity android:name=".ui.main.view.Home" />
         <activity android:name=".ui.main.view.SignUp" />

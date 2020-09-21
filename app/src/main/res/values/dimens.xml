@@ -36,5 +36,6 @@
     <dimen name="xxl_4">200dp</dimen>
     <dimen name="xxl_5">250dp</dimen>
     <dimen name="xxl_6">300dp</dimen>
+    <dimen name="xxl_7">400dp</dimen>
 
 </resources>

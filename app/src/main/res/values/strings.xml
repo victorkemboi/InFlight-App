@@ -16,9 +16,15 @@
     <string name="available">Available</string>
     <string name="airlines">Airlines</string>
     <string name="latest">Latest</string>
+    <string name="issue_period">Oct-2020</string>
     <string name="magazines">Magazines</string>
     <string name="issues">Issues</string>
     <string name="title">Title</string>
+    <string name="publisher">Publisher</string>
+    <string name="published_by">Published by: </string>
+    <string name="start_read">Start Read</string>
     <string name="no_of_mags">No. of Magazines</string>
     <string name="no_of_issues">No. of Issues</string>
+    <string name="subscribe">Subscribe</string>
+    <string name="favourite">Favourite</string>
 </resources>
