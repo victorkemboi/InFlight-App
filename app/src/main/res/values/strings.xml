@@ -15,7 +15,9 @@
     <string name="name_tag">InFlight Mag | 2020</string>
     <string name="available">Available</string>
     <string name="airlines">Airlines</string>
+    <string name="latest">Latest</string>
     <string name="magazines">Magazines</string>
+    <string name="issues">Issues</string>
     <string name="title">Title</string>
     <string name="no_of_mags">No. of Magazines</string>
     <string name="no_of_issues">No. of Issues</string>

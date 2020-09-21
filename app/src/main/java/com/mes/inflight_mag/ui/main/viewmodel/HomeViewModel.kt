@@ -27,7 +27,7 @@ class HomeViewModel @ViewModelInject constructor (
     var loading = MutableLiveData(false)
 
     init {
-
+        getAirlineList()
         fetchAirlinesFromNet()
     }
 

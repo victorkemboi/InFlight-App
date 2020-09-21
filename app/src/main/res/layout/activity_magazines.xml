@@ -8,14 +8,15 @@
 
         <include layout="@layout/tool_bar"
             app:layout_constraintTop_toTopOf="parent"
+            android:id="@+id/tool_lyt"
             />
         <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:id="@+id/magazines_swipe_refresh"
             app:layout_behavior="@string/appbar_scrolling_view_behavior"
-            android:layout_marginTop="@dimen/spacing_middle"
-            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginTop="?attr/actionBarSize"
+            app:layout_constraintTop_toBottomOf="@+id/tool_lyt"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -41,21 +42,21 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="start"
-                        android:text="@string/magazines"
+                        android:text="@string/available"
                         android:textColor="@color/grey_60"
-                        android:textSize="15sp"
-                        android:id="@+id/magazines"/>
+                        android:textSize="12sp"
+                        android:id="@+id/available"/>
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="start"
-                        android:text="@string/available"
+                        android:text="@string/magazines"
                         android:textColor="@color/grey_60"
                         android:textSize="18sp"
                         android:textFontWeight="700"
                         android:textStyle="bold"
-                        android:id="@+id/available"/>
+                        android:id="@+id/magazines"/>
 
 
 

@@ -15,7 +15,7 @@
         android:layout_height="match_parent"
         android:id="@+id/airlines_swipe_refresh"
         app:layout_behavior="@string/appbar_scrolling_view_behavior"
-        android:layout_marginTop="@dimen/spacing_middle"
+        android:layout_marginTop="?attr/actionBarSize"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -42,21 +42,21 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="start"
-                        android:text="@string/airlines"
+                        android:text="@string/available"
                         android:textColor="@color/grey_60"
-                        android:textSize="15sp"
-                        android:id="@+id/airlines"/>
+                        android:textSize="12sp"
+                        android:id="@+id/available"/>
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="start"
-                        android:text="@string/available"
+                        android:text="@string/airlines"
                         android:textColor="@color/grey_60"
                         android:textSize="18sp"
                         android:textFontWeight="700"
                         android:textStyle="bold"
-                        android:id="@+id/available"/>
+                        android:id="@+id/airlines"/>
 
 
 
