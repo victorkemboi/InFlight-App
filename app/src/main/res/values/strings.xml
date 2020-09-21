@@ -20,6 +20,7 @@
     <string name="magazines">Magazines</string>
     <string name="issues">Issues</string>
     <string name="title">Title</string>
+    <string name="logout">Log out</string>
     <string name="publisher">Publisher</string>
     <string name="published_by">Published by: </string>
     <string name="start_read">Start Read</string>
