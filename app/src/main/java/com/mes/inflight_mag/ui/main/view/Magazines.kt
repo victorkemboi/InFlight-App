@@ -3,6 +3,7 @@ package com.mes.inflight_mag.ui.main.view
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import androidx.activity.viewModels
 import androidx.appcompat.widget.Toolbar
@@ -28,6 +29,8 @@ class Magazines : AppCompatActivity(),   SwipeRefreshLayout.OnRefreshListener   
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_magazines)
         magazineVM .airline = intent.extras?.getParcelable("airline")
+        Log.d("Airline receiver: ", magazineVM .airline.toString())
+        magazineVM.fetchMagazines()
         initToolbar()
         setupUI()
         setUpObservers()

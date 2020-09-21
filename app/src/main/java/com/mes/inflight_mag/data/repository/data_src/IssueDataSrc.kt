@@ -33,4 +33,12 @@ class IssueDataSrc(
             else -> true
         }
     }
+
+    override suspend fun getMagazineIssues(magId: String): List<Issue> {
+        return issueDao.getMagazineIssues(magId)
+    }
+
+    override suspend fun getMagazineIssueCount(magId: String): Int {
+        return issueDao.getMagazineIssues(magId).size
+    }
 }

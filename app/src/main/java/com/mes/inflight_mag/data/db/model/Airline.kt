@@ -49,7 +49,7 @@ data class Airline (
     var syncedOn: Date? = null,
 
     @SerializedName("mag_count")
-    var magCount: Int = 3,
+    var magCount: Int = 0,
 
 ): Parcelable
 {

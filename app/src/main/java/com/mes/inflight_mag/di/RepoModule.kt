@@ -2,12 +2,15 @@ package com.mes.inflight_mag.di
 
 import com.mes.inflight_mag.data.api.ApiService
 import com.mes.inflight_mag.data.db.dao.AirlineDao
+import com.mes.inflight_mag.data.db.dao.IssueDao
 import com.mes.inflight_mag.data.db.dao.MagazineDao
 import com.mes.inflight_mag.data.db.dao.UserDao
 import com.mes.inflight_mag.data.repository.AirlineRepo
+import com.mes.inflight_mag.data.repository.IssueRepo
 import com.mes.inflight_mag.data.repository.MagazineRepo
 import com.mes.inflight_mag.data.repository.UserRepo
 import com.mes.inflight_mag.data.repository.data_src.AirlineDataSrc
+import com.mes.inflight_mag.data.repository.data_src.IssueDataSrc
 import com.mes.inflight_mag.data.repository.data_src.MagazineDataSrc
 import com.mes.inflight_mag.data.repository.data_src.UserDataSrc
 import dagger.Module
@@ -34,5 +37,10 @@ object RepoModule {
     @Provides
     internal fun providesMagazineRepo(api: ApiService, magazineDao: MagazineDao): MagazineRepo =
         MagazineDataSrc(api,magazineDao)
+
+    @Singleton
+    @Provides
+    internal fun providesIssueRepo(api: ApiService, issueDao: IssueDao): IssueRepo =
+        IssueDataSrc(api,issueDao)
 
 }

@@ -9,7 +9,7 @@ import com.mes.inflight_mag.data.db.dao.IssueDao
 import com.mes.inflight_mag.data.db.dao.MagazineDao
 import com.mes.inflight_mag.data.db.dao.UserDao
 
-@Database(entities = [ User::class, Airline::class, Customer::class, Magazine::class], version = 1, exportSchema = false)
+@Database(entities = [ User::class, Airline::class, Customer::class, Magazine::class, Issue::class], version = 1, exportSchema = false)
 abstract class MvvmDB : RoomDatabase() {
     abstract fun userDao(): UserDao
 

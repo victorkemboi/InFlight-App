@@ -35,7 +35,7 @@ class Home : AppCompatActivity(),   SwipeRefreshLayout.OnRefreshListener  {
     }
 
     override fun onRefresh() {
-        setUpObservers()
+       homeVM.getAirlineList()
     }
 
     private fun initToolbar(){
@@ -105,6 +105,7 @@ class Home : AppCompatActivity(),   SwipeRefreshLayout.OnRefreshListener  {
             )
 
             newIntent.putExtra("airline", airline)
+            Log.d("Airline parcel: ", airline.toString())
             startActivity(newIntent)
         }
     }

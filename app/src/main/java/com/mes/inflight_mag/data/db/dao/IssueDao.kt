@@ -25,4 +25,7 @@ interface IssueDao {
 
     @Query("SELECT COUNT() FROM issue WHERE magazine_id=:id   ")
     fun getIssueCount(id:String): Int
+
+    @Query("SELECT * FROM issue WHERE magazine_id=:id   ")
+    fun getMagazineIssues(id:String): List<Issue>
 }

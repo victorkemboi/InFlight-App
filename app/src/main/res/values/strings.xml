@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Inflight Mag</string>
+    <string name="app_name">Inflight</string>
     <string name="refresh_to_view">Refresh to view Items!</string>
     <string name="hint_user">Username or Email!</string>
     <string name="hint_username">Username</string>

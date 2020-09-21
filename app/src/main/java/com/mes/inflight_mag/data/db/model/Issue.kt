@@ -7,6 +7,7 @@ import androidx.room.PrimaryKey
 import androidx.room.TypeConverters
 import com.google.gson.annotations.SerializedName
 import com.mes.inflight_mag.utils.DateTypeConverter
+import com.mes.inflight_mag.utils.UtilityClass
 import kotlinx.android.parcel.Parcelize
 import java.util.*
 
@@ -46,6 +47,9 @@ data  class Issue (
 
     @ColumnInfo(name = "syncedOn")
     var syncedOn: Date? = null,
+
+    @ColumnInfo(name = "addedOn")
+    var addedOn: Date = UtilityClass.getCurrentDateTime(),
 ):
     Parcelable {
     @PrimaryKey(autoGenerate = true)

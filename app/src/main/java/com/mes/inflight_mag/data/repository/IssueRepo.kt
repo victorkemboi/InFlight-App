@@ -9,4 +9,6 @@ interface IssueRepo {
     suspend  fun saveIssue(issue: Issue)
     suspend fun getIssue(issueId:String): Issue
     suspend fun checkIssueExists(issueId: String): Boolean
+    suspend fun getMagazineIssues(magId:String): List<Issue>
+    suspend fun getMagazineIssueCount(magId: String): Int
 }

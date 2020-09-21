@@ -33,4 +33,8 @@ class MagazineDataSrc(
             else -> true
         }
     }
+
+    override suspend fun getAirlineMagCount(airlineId: String): Int {
+        return magazineDao.getAirlineMagazines(airlineId).size
+    }
 }

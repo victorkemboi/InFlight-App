@@ -17,4 +17,15 @@ class AirlineDataSrc(
     override suspend fun getAirlines(): List<Airline> {
         return airlineDao.getAirlines()
     }
+
+    override suspend fun save(airline: Airline) {
+        airlineDao.insertAirline(airline)
+    }
+
+    override suspend fun checkExists(airlineId: String): Boolean {
+        return when(airlineDao.checkAirlineExists(airlineId)){
+            0 -> false
+            else -> true
+        }
+    }
 }
