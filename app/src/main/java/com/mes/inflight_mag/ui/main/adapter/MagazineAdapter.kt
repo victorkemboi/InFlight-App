@@ -8,6 +8,7 @@ import com.bumptech.glide.Glide
 import com.bumptech.glide.load.engine.GlideException
 import com.mes.inflight_mag.R
 import com.mes.inflight_mag.data.db.model.Magazine
+import kotlinx.android.synthetic.main.airline_item_layout.view.*
 import kotlinx.android.synthetic.main.magazine_item_layout.view.*
 
 class MagazineAdapter(
@@ -28,7 +29,11 @@ class MagazineAdapter(
         fun bind(magazine: Magazine) {
 
             itemView.magazine_title.text = magazine.title
-            itemView.magazine_no_of_issues.text = magazine.issueCount.toString().plus(" Issues")
+            when(magazine.issueCount){
+                0->  itemView.magazine_no_of_issues.text =  magazine.issueCount.toString().plus("No Issues.")
+                1->  itemView.magazine_no_of_issues.text =  magazine.issueCount.toString().plus(" Issue")
+                else->  itemView.magazine_no_of_issues.text =  magazine.issueCount.toString().plus(" Issues")
+            }
             if (magazine.icon != "" || magazine.icon != "n/a" ){
                 try {
                     Glide.with(itemView.magazine_img.context)

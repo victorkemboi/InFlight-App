@@ -25,7 +25,12 @@ class AirlineAdapter(
         fun bind(airline: Airline) {
 
             itemView.airline_title.text = airline.name
-            itemView.airline_no_of_mags.text = airline.magCount.toString().plus(" Magazines")
+            when(airline.magCount){
+                0->  itemView.airline_no_of_mags.text = airline.magCount.toString().plus("No magazines!")
+                1->  itemView.airline_no_of_mags.text = airline.magCount.toString().plus(" Magazine")
+                else->  itemView.airline_no_of_mags.text = airline.magCount.toString().plus(" Magazines")
+            }
+
 
         }
     }
