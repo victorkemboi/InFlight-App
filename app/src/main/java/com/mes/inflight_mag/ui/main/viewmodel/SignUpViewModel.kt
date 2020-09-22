@@ -35,23 +35,27 @@ class SignUpViewModel @ViewModelInject constructor (
                 username,
                 email,
                 password,
-                "",
-                "",
+                "123456789",
+                "samsung a51",
                 phoneNumber
             )
             when (val response = userRepository.register(registration)) {
                 is NetworkResponse.Success -> {
                     GlobalScope.launch(Dispatchers.Main) {
-                        Log.d("Net Resp",response.toString())
-                        customer.postValue(response.body)
-                        loading.postValue(false)
+                        if (response.body.userId!=""){
+                            customer.postValue(response.body)
+                            loading.postValue(false)
+                            message.postValue("Successfully registered!")
+                        }else{
+                            customer.postValue(null)
+                            loading.postValue(false)
+                            message.postValue("Registration failed! Try again.")
+                        }
 
-                        message.postValue("Successfully registered!")
                     }
                 }
                 is NetworkResponse.NetworkError -> {
                     GlobalScope.launch(Dispatchers.Main) {
-                        Log.d("Net Resp", response.toString())
                         customer.postValue(null)
                         loading.postValue(false)
                         message.postValue("Kindly check your network to register.")
@@ -59,10 +63,8 @@ class SignUpViewModel @ViewModelInject constructor (
                 }
                 else -> {
                     GlobalScope.launch(Dispatchers.Main) {
-                        Log.d("Net Resp", response.toString())
                         customer.postValue(null)
                         loading.postValue(false)
-                        Log.d("Network Error: ",response.toString())
                         message.postValue("Registration failed! Try again.")
                     }
                 }
