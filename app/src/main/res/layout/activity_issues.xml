@@ -23,6 +23,10 @@
         app:layout_constraintEnd_toEndOf="parent"
         >
 
+        <ScrollView
+            android:scrollbars="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -31,6 +35,7 @@
             android:gravity="center"
             android:id="@+id/issues_content"
             android:visibility="gone"
+            android:layout_marginTop="@dimen/spacing_middle"
             >
             <LinearLayout
                 android:layout_width="wrap_content"
@@ -45,7 +50,7 @@
                     android:layout_gravity="start"
                     android:text="@string/latest"
                     android:textColor="@color/grey_60"
-                    android:textSize="15sp"
+                    android:textSize="12sp"
                     android:id="@+id/latest"/>
 
                 <TextView
@@ -92,7 +97,6 @@
                 android:id="@+id/issue_recycler_view"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:scrollbars="vertical"
                 android:layout_gravity="center_horizontal"
                 android:paddingStart="@dimen/spacing_large"
                 android:paddingEnd="@dimen/spacing_large"
@@ -103,11 +107,7 @@
 
         </LinearLayout>
 
-
-
-
-
-
+        </ScrollView>
 
 
     </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>

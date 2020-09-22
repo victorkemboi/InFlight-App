@@ -7,6 +7,7 @@
     <string name="hint_mobile">Phone Number</string>
     <string name="hint_password">Password</string>
     <string name="sign_in_btn">Sign In</string>
+    <string name="sign_in_message">Message</string>
     <string name="sign_up_btn">Sign Up</string>
     <string name="sign_up_option_1">Don\'t have an account?</string>
     <string name="sign_up_option_2">Register now.</string>

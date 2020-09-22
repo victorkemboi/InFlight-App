@@ -23,7 +23,6 @@ class SignUpViewModel @ViewModelInject constructor (
     lateinit var phoneNumber: Number
     lateinit var password:String
 
-    var signUpSuccess = MutableLiveData(false)
     var loading = MutableLiveData(false)
     var customer: MutableLiveData<Customer?> = MutableLiveData<Customer?>()
     var message: MutableLiveData<String> = MutableLiveData("")
@@ -45,7 +44,6 @@ class SignUpViewModel @ViewModelInject constructor (
                     GlobalScope.launch(Dispatchers.Main) {
                         Log.d("Net Resp",response.toString())
                         customer.postValue(response.body)
-                        signUpSuccess.postValue(true)
                         loading.postValue(false)
 
                         message.postValue("Successfully registered!")
@@ -55,7 +53,6 @@ class SignUpViewModel @ViewModelInject constructor (
                     GlobalScope.launch(Dispatchers.Main) {
                         Log.d("Net Resp", response.toString())
                         customer.postValue(null)
-                        signUpSuccess.postValue(false)
                         loading.postValue(false)
                         message.postValue("Kindly check your network to register.")
                     }
@@ -64,7 +61,6 @@ class SignUpViewModel @ViewModelInject constructor (
                     GlobalScope.launch(Dispatchers.Main) {
                         Log.d("Net Resp", response.toString())
                         customer.postValue(null)
-                        signUpSuccess.postValue(false)
                         loading.postValue(false)
                         Log.d("Network Error: ",response.toString())
                         message.postValue("Registration failed! Try again.")

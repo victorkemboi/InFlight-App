@@ -46,8 +46,7 @@ class Issues : AppCompatActivity() ,   SwipeRefreshLayout.OnRefreshListener  {
         setSupportActionBar(tool_lyt as Toolbar)
         (tool_lyt as Toolbar).setNavigationIcon(R.drawable.ic_back)
         (tool_lyt as Toolbar).setNavigationOnClickListener {
-            //super.onBackPressed()
-            finish()
+            super.onBackPressed()
         }
         supportActionBar!!.title = issueVM.magazine?.title
         supportActionBar!!.setDisplayHomeAsUpEnabled(true)

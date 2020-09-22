@@ -21,7 +21,7 @@ class SignInViewModel @ViewModelInject constructor (
 
     lateinit var username:String
     lateinit var password:String
-    var signInSuccess = MutableLiveData(false)
+
     var loading = MutableLiveData(false)
     var customer: MutableLiveData<Customer?> = MutableLiveData<Customer?>()
     var message: MutableLiveData<String> = MutableLiveData("")
@@ -37,11 +37,8 @@ class SignInViewModel @ViewModelInject constructor (
 
                     is NetworkResponse.Success -> {
                         GlobalScope.launch(Dispatchers.Main) {
-                            Log.d("Net Resp",response.toString())
                             customer.postValue(response.body)
-                            signInSuccess.postValue(true)
                             loading.postValue(false)
-
                             message.postValue("Successfully signed in!")
                         }
 
@@ -51,21 +48,17 @@ class SignInViewModel @ViewModelInject constructor (
 
                     is NetworkResponse.NetworkError -> {
                         GlobalScope.launch(Dispatchers.Main) {
-                            Log.d("Net Resp", response.toString())
                             customer.postValue(null)
-                            signInSuccess.postValue(false)
                             loading.postValue(false)
-                            message.postValue("Kindly check your network to sign in.")
+                            message.postValue("Kindly check your network to Sign In.")
                         }
                     }
 
                     else -> {
                         GlobalScope.launch(Dispatchers.Main) {
-                            Log.d("Net Resp", response.toString())
                             customer.postValue(null)
-                            signInSuccess.postValue(false)
                             loading.postValue(false)
-                            message.postValue("Sign in failed! Check your credentials.")
+                            message.postValue("Sign In failed! Check your credentials.")
                         }
                     }
                 }

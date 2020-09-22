@@ -1,18 +1,9 @@
 package com.mes.inflight_mag.di
 
 import com.mes.inflight_mag.data.api.ApiService
-import com.mes.inflight_mag.data.db.dao.AirlineDao
-import com.mes.inflight_mag.data.db.dao.IssueDao
-import com.mes.inflight_mag.data.db.dao.MagazineDao
-import com.mes.inflight_mag.data.db.dao.UserDao
-import com.mes.inflight_mag.data.repository.AirlineRepo
-import com.mes.inflight_mag.data.repository.IssueRepo
-import com.mes.inflight_mag.data.repository.MagazineRepo
-import com.mes.inflight_mag.data.repository.UserRepo
-import com.mes.inflight_mag.data.repository.data_src.AirlineDataSrc
-import com.mes.inflight_mag.data.repository.data_src.IssueDataSrc
-import com.mes.inflight_mag.data.repository.data_src.MagazineDataSrc
-import com.mes.inflight_mag.data.repository.data_src.UserDataSrc
+import com.mes.inflight_mag.data.db.dao.*
+import com.mes.inflight_mag.data.repository.*
+import com.mes.inflight_mag.data.repository.data_src.*
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -42,5 +33,10 @@ object RepoModule {
     @Provides
     internal fun providesIssueRepo(api: ApiService, issueDao: IssueDao): IssueRepo =
         IssueDataSrc(api,issueDao)
+
+    @Singleton
+    @Provides
+    internal fun providesFavouritesRepo(api: ApiService, favouriteIssueDao: FavouriteIssueDao):
+            FavouritesRepo =   FavouritesDataSrc(api,favouriteIssueDao)
 
 }

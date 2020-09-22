@@ -79,15 +79,15 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:orientation="horizontal"
-                            android:layout_marginStart="@dimen/spacing_mlarge"
-                            android:layout_marginEnd="@dimen/spacing_mlarge"
+                            android:layout_marginStart="@dimen/spacing_middle"
+                            android:layout_marginEnd="@dimen/spacing_middle"
                             android:background="@drawable/rounded_white_rectangle">
 
                             <LinearLayout
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
-                                android:layout_marginEnd="@dimen/spacing_mlarge"
+                                android:layout_marginEnd="@dimen/spacing_middle"
                                 android:layout_marginStart="8dp"
                                 android:layout_marginTop="@dimen/spacing_medium"
                                 android:layout_marginBottom="@dimen/spacing_medium"
@@ -129,15 +129,15 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:orientation="horizontal"
-                            android:layout_marginStart="@dimen/spacing_mlarge"
-                            android:layout_marginEnd="@dimen/spacing_mlarge"
+                            android:layout_marginStart="@dimen/spacing_middle"
+                            android:layout_marginEnd="@dimen/spacing_middle"
                             android:background="@drawable/rounded_white_rectangle">
 
                             <LinearLayout
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
-                                android:layout_marginEnd="@dimen/spacing_mlarge"
+                                android:layout_marginEnd="@dimen/spacing_middle"
                                 android:layout_marginStart="8dp"
                                 android:layout_marginTop="@dimen/spacing_medium"
                                 android:layout_marginBottom="@dimen/spacing_medium"
@@ -181,15 +181,15 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:orientation="horizontal"
-                            android:layout_marginStart="@dimen/spacing_mlarge"
-                            android:layout_marginEnd="@dimen/spacing_mlarge"
+                            android:layout_marginStart="@dimen/spacing_middle"
+                            android:layout_marginEnd="@dimen/spacing_middle"
                             android:background="@drawable/rounded_white_rectangle">
 
                             <LinearLayout
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
-                                android:layout_marginEnd="@dimen/spacing_mlarge"
+                                android:layout_marginEnd="@dimen/spacing_middle"
                                 android:layout_marginStart="8dp"
                                 android:layout_marginTop="@dimen/spacing_medium"
                                 android:layout_marginBottom="@dimen/spacing_medium"
@@ -233,15 +233,15 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:orientation="horizontal"
-                            android:layout_marginStart="@dimen/spacing_mlarge"
-                            android:layout_marginEnd="@dimen/spacing_mlarge"
+                            android:layout_marginStart="@dimen/spacing_middle"
+                            android:layout_marginEnd="@dimen/spacing_middle"
                             android:background="@drawable/rounded_white_rectangle">
 
                             <LinearLayout
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
-                                android:layout_marginEnd="@dimen/spacing_mlarge"
+                                android:layout_marginEnd="@dimen/spacing_middle"
                                 android:layout_marginStart="8dp"
                                 android:layout_marginTop="@dimen/spacing_medium"
                                 android:layout_marginBottom="@dimen/spacing_medium"
@@ -279,6 +279,17 @@
 
 
                         </LinearLayout>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/sign_in_message"
+                            android:layout_marginTop="@dimen/spacing_middle"
+                            android:textColor="@color/red_400"
+                            android:id="@+id/sign_up_message"
+                            style="@style/TextAppearance.Compat.Notification.Title"
+                            />
+
 
                         <Button
                             android:layout_width="wrap_content"

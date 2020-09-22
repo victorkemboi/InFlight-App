@@ -23,9 +23,10 @@ class SignUp : AppCompatActivity() {
         go_to_sign_in.setOnClickListener {
             startActivity(
                 Intent(
-                    this@SignUp, SignUp::class.java
+                    this@SignUp, SignIn::class.java
                 )
             )
+            finish()
         }
         sign_up_btn.setOnClickListener {
             signUp()
@@ -38,7 +39,6 @@ class SignUp : AppCompatActivity() {
         signUpVM.loading.observe(
             this,{
                     loading ->run{
-                Log.d("Loading changed",loading.toString())
                 if (loading) {
                     sign_up_loader.visibility = View.VISIBLE
 
@@ -50,18 +50,6 @@ class SignUp : AppCompatActivity() {
             }
         )
 
-        signUpVM.signUpSuccess.observe(
-            this,{
-                    responseSuccess ->run{
-                if (responseSuccess){
-                    //succeeded
-
-                }else{
-                    Log.d("Loading changed",responseSuccess.toString())
-                }
-            }
-            }
-        )
 
         signUpVM.customer.observe(
             this,{
@@ -77,6 +65,19 @@ class SignUp : AppCompatActivity() {
 
 
 
+                }
+            }
+            }
+        )
+        signUpVM.message.observe(
+            this,{
+                    message->run{
+                if(message==""){
+                    sign_up_message.visibility = View.GONE
+                }else{
+
+                    sign_up_message.text = message
+                    sign_up_message.visibility = View.VISIBLE
                 }
             }
             }
@@ -98,17 +99,33 @@ class SignUp : AppCompatActivity() {
 
     private fun isValidInput():Boolean{
         if (sign_up_username.text.toString().isEmpty()){
+            sign_up_user_IL.error = "Required!"
+            sign_up_user_IL.isErrorEnabled = true
             return false
+        }else{
+            sign_up_user_IL.isErrorEnabled = true
         }
 
         if (sign_up_email.text.toString().isEmpty()){
+            sign_up_email_IL.error = "Required!"
+            sign_up_email_IL.isErrorEnabled = true
             return false
+        }else{
+            sign_up_email_IL.isErrorEnabled = false
         }
         if (sign_up_mobile.text.toString().isEmpty()){
+            sign_in_mobile_IL.error = "Required!"
+            sign_in_mobile_IL.isErrorEnabled = true
             return false
+        }else{
+            sign_in_mobile_IL.isErrorEnabled = false
         }
         if (sign_up_password.text.toString().isEmpty()){
+            sign_in_password_IL.error = "Required!"
+            sign_in_password_IL.isErrorEnabled = true
             return false
+        }else{
+            sign_in_password_IL.isErrorEnabled = false
         }
 
         return true

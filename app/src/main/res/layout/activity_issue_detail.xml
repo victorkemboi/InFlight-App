@@ -39,7 +39,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="start"
             android:text="@string/title"
-            android:textColor="@color/colorPrimaryDark"
+            android:textColor="@color/grey_80"
             android:textSize="20sp"
             android:textStyle="bold"
             android:id="@+id/issue_title"/>
@@ -52,13 +52,13 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/published_by"
-                android:textColor="@color/grey_40"
+                android:textColor="@color/grey_60"
                 android:textSize="15sp"/>
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/publisher"
-                android:textColor="@color/colorAccent"
+                android:textColor="@color/grey_80"
                 android:textSize="18sp"
                 android:textFontWeight="700"
                 android:textStyle="bold"
@@ -168,7 +168,7 @@
             android:backgroundTint="@color/colorAccent"
             app:tint = "@color/black"
             android:src="@drawable/ic_favourite"
-            android:id="@+id/add_user"
+            android:id="@+id/add_favourite"
             android:visibility="visible"
             android:layout_weight="3"
 

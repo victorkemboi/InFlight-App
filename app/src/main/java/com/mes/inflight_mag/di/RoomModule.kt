@@ -3,10 +3,7 @@ package com.mes.inflight_mag.di
 
 
 import android.content.Context
-import com.mes.inflight_mag.data.db.dao.AirlineDao
-import com.mes.inflight_mag.data.db.dao.IssueDao
-import com.mes.inflight_mag.data.db.dao.MagazineDao
-import com.mes.inflight_mag.data.db.dao.UserDao
+import com.mes.inflight_mag.data.db.dao.*
 import com.mes.inflight_mag.data.db.model.MvvmDB
 import dagger.Module
 import dagger.Provides
@@ -52,6 +49,12 @@ object RoomModule
     @Singleton
     internal fun provideIssueDao(db: MvvmDB): IssueDao {
         return db.issueDao()
+    }
+
+    @Provides
+    @Singleton
+    internal fun provideFavouriteIssueDao(db: MvvmDB): FavouriteIssueDao {
+        return db.favouriteIssueDao()
     }
 
 }

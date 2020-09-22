@@ -7,9 +7,12 @@ import com.mes.inflight_mag.data.db.model.Airline
 import com.mes.inflight_mag.data.db.model.Issue
 import com.mes.inflight_mag.data.db.model.Magazine
 import com.mes.inflight_mag.data.repository.IssueRepo
+import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
+
+
 
 class IssueViewModel@ViewModelInject constructor (
     @Assisted private val savedStateHandle: SavedStateHandle,

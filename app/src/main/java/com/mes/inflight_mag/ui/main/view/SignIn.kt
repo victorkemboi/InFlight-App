@@ -34,6 +34,7 @@ class SignIn : AppCompatActivity() {
                     this@SignIn, SignUp::class.java
                 )
             )
+            finish()
         }
     }
 
@@ -42,7 +43,6 @@ class SignIn : AppCompatActivity() {
         signInVM.loading.observe(
             this,{
                     loading ->run{
-                Log.d("Loading changed",loading.toString())
                 if (loading) {
                     sign_in_loader.visibility = View.VISIBLE
 
@@ -50,19 +50,6 @@ class SignIn : AppCompatActivity() {
                     sign_in_loader.visibility = View.GONE
                 }
 
-            }
-            }
-        )
-
-        signInVM.signInSuccess.observe(
-            this,{
-                    responseSuccess ->run{
-                if (responseSuccess){
-                    //succeeded
-
-                }else{
-                    Log.d("Loading changed",responseSuccess.toString())
-                }
             }
             }
         )
@@ -89,6 +76,20 @@ class SignIn : AppCompatActivity() {
             }
             }
         )
+
+        signInVM.message.observe(
+            this,{
+                message->run{
+               if(message==""){
+                   sign_in_message.visibility = View.GONE
+                }else{
+
+                    sign_in_message.text = message
+                    sign_in_message.visibility = View.VISIBLE
+                }
+            }
+            }
+        )
     }
 
     private fun login(){
@@ -108,11 +109,19 @@ class SignIn : AppCompatActivity() {
 
     private fun isValidInput():Boolean{
         if (sign_in_username.text.toString().isEmpty()){
+            sign_in_user_IL.error = "Required!"
+            sign_in_user_IL.isErrorEnabled = true
             return false
+        }else{
+            sign_in_user_IL.isErrorEnabled = false
         }
 
         if (sign_in_password.text.toString().isEmpty()){
+            sign_in_password_IL.error = "Required!"
+            sign_in_password_IL.isErrorEnabled = true
             return false
+        }else{
+            sign_in_password_IL.isErrorEnabled = false
         }
 
         return true

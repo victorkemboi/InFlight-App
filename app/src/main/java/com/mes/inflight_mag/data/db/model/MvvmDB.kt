@@ -4,12 +4,10 @@ import android.content.Context
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
-import com.mes.inflight_mag.data.db.dao.AirlineDao
-import com.mes.inflight_mag.data.db.dao.IssueDao
-import com.mes.inflight_mag.data.db.dao.MagazineDao
-import com.mes.inflight_mag.data.db.dao.UserDao
+import com.mes.inflight_mag.data.db.dao.*
 
-@Database(entities = [ User::class, Airline::class, Customer::class, Magazine::class, Issue::class], version = 1, exportSchema = false)
+@Database(entities = [ User::class, Airline::class, Customer::class, Magazine::class,
+    Issue::class, FavouriteIssue::class], version = 2, exportSchema = false)
 abstract class MvvmDB : RoomDatabase() {
     abstract fun userDao(): UserDao
 
@@ -18,6 +16,8 @@ abstract class MvvmDB : RoomDatabase() {
     abstract fun magazineDao(): MagazineDao
 
     abstract fun issueDao(): IssueDao
+
+    abstract fun favouriteIssueDao(): FavouriteIssueDao
 
     companion object{
         @Volatile
